@@ -1,0 +1,504 @@
+<title>Antoine Bender | Professional Profile</title>
+<style>
+    :root {
+        --columbia-blue: #C4D8E2;
+        --columbia-dark: #1D3557;
+        --columbia-accent: #6C9AC3;
+        --bg-light: #F8FAFC;
+        --card-bg: #FFFFFF;
+        --text-dark: #2B2D42;
+        --text-muted: #5C677D;
+        --border-color: #E2E8F0;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    header {
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1.2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--columbia-dark);
+        text-decoration: none;
+        letter-spacing: -0.5px;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+    }
+
+    nav a:hover {
+        color: var(--columbia-dark);
+    }
+
+    main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        flex-grow: 1;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, var(--columbia-blue) 0%, #E9F1F7 100%);
+        border-radius: 12px;
+        padding: 3rem 2.5rem;
+        margin-bottom: 3rem;
+        border: 1px solid rgba(196, 216, 226, 0.5);
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        color: var(--columbia-dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .hero p.tagline {
+        font-size: 1.1rem;
+        color: var(--columbia-dark);
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+    }
+
+    .contact-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-item a {
+        color: var(--columbia-dark);
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid var(--columbia-accent);
+    }
+
+    .badge {
+        display: inline-block;
+        background-color: var(--columbia-dark);
+        color: #FFFFFF;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    section {
+        margin-bottom: 3.5rem;
+        scroll-margin-top: 5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        color: var(--columbia-dark);
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid var(--columbia-blue);
+        padding-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card {
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        padding: 1.5rem;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+        color: var(--columbia-dark);
+        font-weight: 700;
+    }
+
+    .card-subtitle {
+        font-size: 0.95rem;
+        color: var(--columbia-accent);
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    .card-meta {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+    }
+
+    .card-body ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .card-body li {
+        position: relative;
+        padding-left: 1.2rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.92rem;
+        color: var(--text-dark);
+    }
+
+    .card-body li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--columbia-accent);
+        font-weight: bold;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem;
+    }
+
+    .skill-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1.2rem;
+    }
+
+    .skill-card h4 {
+        color: var(--columbia-dark);
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        border-bottom: 1px solid var(--columbia-blue);
+        padding-bottom: 0.3rem;
+    }
+
+    .skill-card p {
+        font-size: 0.9rem;
+        color: var(--text-dark);
+    }
+
+    .github-link {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+        color: var(--columbia-accent);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .github-link:hover {
+        text-decoration: underline;
+    }
+
+    .card-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    .card-links .github-link {
+        margin-top: 0;
+    }
+
+    footer {
+        background-color: var(--card-bg);
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+        .nav-container {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        nav ul {
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero {
+            padding: 2rem 1.5rem;
+        }
+
+        .grid-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo">ANTOINE BENDER</a>
+        <nav>
+            <ul>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#skills">Skills & Interests</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <span class="badge">STEM OPT - Does not require sponsorship for 3 years</span>
+        <h1>Antoine Bender</h1>
+        <p class="tagline">Columbia Business School M.S. Candidate | Corporate Finance & Data Analysis</p>
+        <div class="contact-bar">
+            <span class="contact-item">Phone: (917) 797-4590</span>
+            <span class="contact-item">Email: <a href="mailto:ABender28@gsb.columbia.edu">ABender28@gsb.columbia.edu</a></span>
+            <span class="contact-item">LinkedIn: <a href="https://www.linkedin.com/in/antoinebender28102005" target="_blank">linkedin.com/in/antoinebender28102005</a></span>
+            <span class="contact-item">GitHub: <a href="https://github.com/AntoineBender" target="_blank">github.com/AntoineBender</a></span>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Columbia Business School</div>
+                        <div class="card-subtitle">M.S. in Accounting and Fundamental Analysis</div>
+                    </div>
+                </div>
+                <div class="card-meta">Aug. 2026 – Jan. 2028 | New York City, USA</div>
+                <div class="card-body">
+                    <ul>
+                        <li>STEM-designated program combining MS, MBA, and PhD-level coursework.</li>
+                        <li>Relevant coursework: Mergers and Acquisition, LBO & Bankruptcy Transactions, Valuation and Financial Statement Analysis.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">IÉSEG School of Management</div>
+                        <div class="card-subtitle">Bachelor in International Management (PGE Program)</div>
+                    </div>
+                </div>
+                <div class="card-meta">Sep. 2023 – Jun. 2026 | Lille, France</div>
+                <div class="card-body">
+                    <ul>
+                        <li>EQUIS, AMBA and AACSB accredited program. GPA: 4.0/4.0; Ranked Top 4% of the cohort (45th out of 1,115).</li>
+                        <li>Exchange Semester: Hong Kong Polytechnic University. Relevant coursework: Corporate Finance, Macroeconomics.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Johnson Controls International (JCI)</div>
+                        <div class="card-subtitle">Summer Analyst: Treasury and Corporate Finance</div>
+                    </div>
+                </div>
+                <div class="card-meta">Apr. 2026 – Jul. 2026 | Luxembourg City</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Implemented an AI agent to automate quarterly account reconciliation, cutting processing time from 12 hours to 30 minutes (96% reduction), and identified further AI implementation opportunities across treasury workflows.</li>
+                        <li>Executed a banking infrastructure transition across 3 European countries and 2 new banking partners, delivered on schedule for go-live, by coordinating execution of KYC, account opening, SWIFT connectivity, and cash-pooling processes in parallel.</li>
+                        <li>Led change management for 25 e-banking users, migrating them to Power BI and delivering hands-on training.</li>
+                    </ul>
+                    <div class="card-links">
+                        <a href="https://mra-recon-tool.vercel.app" target="_blank" class="github-link">Live Tool →</a>
+                        <a href="https://github.com/AntoineBender/mra-recon-tool" target="_blank" class="github-link">View repository on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Société Générale</div>
+                        <div class="card-subtitle">Summer Analyst: Global Transaction and Payment Services (GTPS)</div>
+                    </div>
+                </div>
+                <div class="card-meta">Jul. 2025 – Aug. 2025 | Luxembourg City</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Analyzed global, European, and Luxembourg Private Equity markets using 10+ KPIs (AUM, dry powder, fundraising, deal activity, market share) across 20+ sources to give market insights on Private Equity to senior management of the bank.</li>
+                        <li>Assessed Alternative Investment Fund (AIF) banking needs and recommended 4 tailored service solutions (escrow account, cash pooling, NAV financing, multi-currency bank account).</li>
+                        <li>Conducted competitive intelligence and industry research across 15+ banks in Luxembourg, identifying 3 main competitor types; structured findings into management reporting for GTPS senior leadership and received positive feedback.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Project Meridian</div>
+                        <div class="card-subtitle">Private Markets Research and Analysis Dashboard</div>
+                    </div>
+                </div>
+                <div class="card-meta">July 2026 – Present</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Built an independent research platform using Claude Code spanning macroeconomic, demographic, real estate, and private-equity data, by gathering information from SEC filings, five U.S. pension systems, and World Bank sources.</li>
+                        <li>Built deal-sourcing and benchmarking capabilities by tracking PE-owned companies approaching the 5-7 year maturity window typical of exit timing using SEC Form D (2,040 companies flagged), benchmarking net IRR across 1,553 PE funds, and modeling rental yields across 300 U.S. cities.</li>
+                    </ul>
+                    <div class="card-links">
+                        <a href="https://project-meridian-liart.vercel.app" target="_blank" class="github-link">Live Dashboard →</a>
+                        <a href="https://github.com/AntoineBender/project-meridian" target="_blank" class="github-link">View repository on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Python Data Analysis Project</div>
+                        <div class="card-subtitle">Tech Firm Financial Cross-Sectional Analysis</div>
+                    </div>
+                </div>
+                <div class="card-meta">Sep. 2025 – Nov. 2025</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Conducted cross-sectional analysis of 400 tech firms using Python and Yahoo Finance.</li>
+                        <li>Examined links between debt financing, risk, revenue, and returns; produced a 7-page investment report with data visualizations and recommendations.</li>
+                    </ul>
+                    <a href="https://github.com/AntoineBender/tech-firm-leverage-analysis" target="_blank" class="github-link">View repository on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <h2 class="section-title">Leadership and Extracurricular Activities</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">IÉSEG Finance Club</div>
+                        <div class="card-subtitle">Long-Term Investment Portfolio Vice President</div>
+                    </div>
+                </div>
+                <div class="card-meta">Jun. 2024 – Sep. 2025 | Lille, France</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Led a team of 4 to develop financial models for portfolio construction using sensitivity analysis and valuation methodologies (covariance matrix, Sharpe ratio, expected return, Solver).</li>
+                        <li>Delivered monthly portfolio performance reporting and analysis.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">L'atelier Fashion Club</div>
+                        <div class="card-subtitle">Director of Event Organization</div>
+                    </div>
+                </div>
+                <div class="card-meta">Jun. 2024 – Sep. 2025 | Lille, France</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Directed a student fashion show, coordinating 8 designers and 40 models; managed a EUR 1,000 budget, sold out to 200+ attendees, resulting in the publication of a news article by the school.</li>
+                        <li>Organized a formal gala with a EUR 3,000 budget, allocating funds across venue, DJ, catering, photo booth, décor, buses, and promotion; coordinated transportation and school staff.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills and Interests</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>Languages</h4>
+                <p>French (Native), English (Fluent), German (Upper-Intermediate/B2), Spanish (Intermediate/B1)</p>
+            </div>
+            <div class="skill-card">
+                <h4>Technical Skills</h4>
+                <p>Python (Working Proficiency), Excel (Advanced), Power BI (Intermediate), Claude Code (Advanced), IBM SPSS (Intermediate)</p>
+            </div>
+            <div class="skill-card">
+                <h4>Soft Skills</h4>
+                <p>Adaptable, Intellectually Curious, Competitive, Entrepreneurial, Independent</p>
+            </div>
+            <div class="skill-card">
+                <h4>Interests</h4>
+                <p>Basketball (10 years), Chess, San Antonio Spurs, Travel, Lifting, Fashion, Artificial Intelligence (AI)</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Antoine Bender. All rights reserved.</p>
+</footer>
